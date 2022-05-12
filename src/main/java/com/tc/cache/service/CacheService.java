@@ -1,10 +1,8 @@
 package com.tc.cache.service;
 
-import java.sql.Array;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -20,9 +18,19 @@ public class CacheService implements CacheApiDelegate {
 	
 	private ArrayList<CacheData> cacheDataList;
 	
+	
+	public void setSize(int size)
+	{
+		this.size = size;
+	}
 	public CacheService()
 	{
 		cacheDataList = new ArrayList();
+	}
+	
+	public ArrayList getCacheDataList()
+	{
+		return this.cacheDataList;
 	}
 	
     @Override
