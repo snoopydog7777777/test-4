@@ -25,10 +25,10 @@ public class CacheService implements CacheApiDelegate {
 	}
 	public CacheService()
 	{
-		cacheDataList = new ArrayList();
+		cacheDataList = new ArrayList<CacheData>();
 	}
 	
-	public ArrayList getCacheDataList()
+	public ArrayList<CacheData> getCacheDataList()
 	{
 		return this.cacheDataList;
 	}

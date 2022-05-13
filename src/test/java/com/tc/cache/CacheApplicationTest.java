@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.tc.cache.model.CacheData;
@@ -16,7 +15,6 @@ class CacheApplicationTest {
 
 	@Test
 	public void testCacheService() throws Throwable{
-		int size = 3;
 		CacheService cacheService = new CacheService();
 		
 		cacheService.setSize(3);
@@ -45,7 +43,7 @@ class CacheApplicationTest {
 		
 		cacheService.cachePut(cacheData4);
 		
-		ArrayList cacheDataList = cacheService.getCacheDataList();
+		ArrayList<CacheData> cacheDataList = cacheService.getCacheDataList();
 		assertEquals(cacheDataList.get(2), cacheData4);
 		assertEquals(cacheDataList.get(1), cacheData3);
 		assertEquals(cacheDataList.get(0), cacheData2);
